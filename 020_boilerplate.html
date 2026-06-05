@@ -2,7 +2,7 @@
 <!-- Der DOCTYPE sagt dem Browser: Dies ist ein HTML-Dokument -->
 
 <html lang="de">    
-    <!-- Das <html>-Element ist das Wurzelelemen der Seite. 
+    <!-- Das <html>-Element ist das Wurzelelement der Seite.
         Es umschließt alle anderen Elemente.
         Also alles was zu der Seite gehört (<head>, <body>, Inhalte, etc.)
             liegt innerhalb des <html>...</html> Tags 
@@ -24,16 +24,16 @@
         <!-- Die Meta-Angabe "charset" legt die Zeichencodierung fest. 
          UTF-8 Umlaute und Sonderzeichen werden korrekt dargestellt (z.B. ä, ö, ü, €, ?, etc.). -->
 
-        <meta name="viewport" content="width=width-device, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Sorgt dafür, dass die Webseite auf mobilen Geräten korrekt dargestellt wird, indem 
          sie die Breite des Viewports an die Bildschirmbreite anpasst und die anfängliche Zoomstufe 
          festlegt. (=Responsive Design) 
          
          name="viewport" -> Diese Einstellung betrifft den sichtbaren Bereich unserer Webseite, welche 
                             wir auf unserem Gerät anschauen 
-        width=width-device -> Die Breite der Seite soll sich an die Bildschirmbreite anpassen
+        width=device-width -> Die Breite der Seite soll sich an die Bildschirmbreite anpassen
         initial-scale=1.0 -> Die Anfangs-Zoomstufe
-                            1.0 -> 100% Zoom (Standartgröße)
+                            1.0 -> 100% Zoom (Standardgröße)
                             0.5 -> 50% Zoom (alles kleiner)
                             2.0 -> 200% Zoom (alles größer) NICHT empfohlen -->
         
@@ -48,9 +48,9 @@
             <!--Die Kopfzeile der Seite, enthält z.B. das Logo, die Navigation, Login, etc. -->
 
             <h1>Hallo HTML</h1>
-            <!-- Eine Überschrift -> in den Order von Wichtigkeit (h1-h6)
-                <h1> Überschrift der ersten Ebene und darf nur EINMAL vorkommen 
-                <h2> <h6> Überschrifte die nächste Ebenen, dürfen mehrfach vorkommen -->
+            <!-- Eine Überschrift -> in der Reihenfolge von Wichtigkeit (h1-h6)
+                <h1> Überschrift der ersten Ebene und darf nur EINMAL vorkommen
+                <h2> bis <h6> Überschriften der nächsten Ebenen, dürfen mehrfach vorkommen -->
             </header> 
 
             <main>
@@ -58,21 +58,22 @@
                 Inhalte welche die Themen der Seite erklären sollen
                 Es sollte nur EIN <main> Element pro Seite geben. -->
                 
-                <p>Hier beginnt die eigentliche Webseite <br>(Alle Inhalten).</p>
-                <!-- <p> -> Paragraph (=Absatz) 
-                    <br> -> Zeilenumbruch 
+                <p>Hier beginnt die eigentliche Webseite <br>(Alle Inhalte).</p>
+                <!-- <p> -> Paragraph (=Absatz)
+                    <br> -> Zeilenumbruch
                     <b> -> Fett
                     <i> -> Kursiv
                     <u> -> Unterstrichen -->
 
-                <footer>
-                <!-- Fußzeile der Seite, enthält z.B. Kontakte, copyright, Impressum, etc. -->
-
-                    <p>&copy; 2023 Meine Webseite. Alle Rechte vorbehalten. </p>
-                    <!-- &copy; -> Copyright Symbol
-                        -> HTML versteht manche Zeichen nicht direkt oder können Probleme auftreten
-                        Deshalb gibt es HTML-Entities (Ersatzschreibweisen) -->
-                </footer>
-
             </main>
+
+            <footer>
+            <!-- Fußzeile der Seite, enthält z.B. Kontakte, copyright, Impressum, etc. -->
+
+                <p>&copy; 2023 Meine Webseite. Alle Rechte vorbehalten. </p>
+                <!-- &copy; -> Copyright Symbol
+                    -> HTML versteht manche Zeichen nicht direkt oder können Probleme auftreten
+                    Deshalb gibt es HTML-Entities (Ersatzschreibweisen) -->
+            </footer>
     </body>
+</html>
