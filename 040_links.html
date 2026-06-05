@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Anchor-Tags (Links)</title>
+    </head>
+    <body>
+        <header>
+            <h1>Anchor-Tags (&lt;a&gt;) - Links in HTML</h1>
+
+            <p>
+                Mit dem Anchor-Tags können wir Links erstellen. 
+                Diese können entweder zu anderen Webseiten führen, 
+                zu anderen Stellen auf der gleichen Seite 
+                oder auch zu Dateien wie PDFs oder Bildern.
+            </p>
+        </header>
+
+        <hr>
+
+        <main>
+            <section id="ziel">
+                <h2>1. Grundaufbau eines Links</h2>
+
+                <p>So sieht ein einfacher Link im Code aus:</p>
+
+                <pre>
+                <!-- <pre> formatiert den Text wie ich im code formatiere -->
+                    &lt;a href="https://google.com"&gt; Ich bin ein Link &lt;/a&gt;
+                </pre>
+                <pre>
+                /\_/\\
+                ( o.o )
+                > ^ <
+                </pre>
+                
+                <p>So sieht der Link im Browser aus:</p>
+                <a href="https://google.com"> Ich bin ein Link </a>
+            </section>
+
+            <section>
+                <h2>2. Das href-Attribut</h2>
+
+                <p>
+                    Das <code>href</code> steht für "hypertext reference". 
+                    Das Attribut href gibt die Zieladresse des Links an.
+                    Ohne das href-Attribut funktioniert der Link NICHT.
+                </p>
+                <!-- </code> formatiert den Text wie ich im code formatiere -->
+
+                <p>
+                    Es gibt verschiedene Möglichkeiten, die Zieladresse anzugeben:
+                </p>
+
+                <ul>
+                    <li><code>href="./010_hallo.html"</code> Link zu einer Datei im gleichen Ordner /Webseite (relative URL)</li>
+                    <li><code>href="../010_hallo.html"</code> Link zu einer Datei in einem übergeordneten Ordner (relative URL)</li>
+                    <li><code>href="../../010_hallo.html"</code> Link zu einer Datei in einem zweiten übergeordneten Ordner (zweimal nach draußen)</li>
+                    <li><code>href="/010_hallo.html"</code> Link zu einer Datei im Hauptverzeichnis der Webseite (relative URL)</li>
+                    <li><code>href="C:\pfad\zu\datei.html"</code> Link zu einer Datei auf dem lokalen Computer (lokaler Pfad)</li>
+                    <li><code>href="https://google.com"</code> Link zu einer externen Website (absolute URL)</li>
+                    <li><code>href="/seite.html"</code> Link zu einer Seite im Wurzelverzeichnis (interne URL)</li>
+                    <li><code>href="/datei.pdf"</code> Link zu einer Datei (Datei-Link)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Link in einem neuen Tab öffnen</h2>
+
+                <p>
+                    Mit dem <code>target</code>-Attribut können wir steuern, in welchem Tab oder Fenster der Link geöffnet wird.
+                </p>
+                
+                <ul>
+                    <li><code>target="_self"</code> Link wird im gleichen Tab geöffnet (Standard)</li>
+                    <li><code>target="_blank"</code> Link wird in einem neuen Tab geöffnet</li>
+                </ul>
+
+                <pre>
+                    &lt;a href="https://google.com" target="_blank" rel="noopener noreferrer"&gt; Ich bin ein Link, der in einem neuen Tab geöffnet wird &lt;/a&gt;
+                </pre>
+
+                <p>So sieht der Link im Browser aus: </p>
+                <a href="https://google.com" target="_blank" rel="noopener noreferrer"> Ich bin ein Link, der in einem neuen Tab geöffnet wird </a>
+
+                <p>
+                    <strong>noopener</strong>
+                    <br>Sicherheit BEI <code>target="_blank"</code>; das die Zielseite meine Seite nicht manipulieren kann (z.B. durch JavaScript)
+                    <br>
+                    <br><strong>noreferrer</strong>
+                    <br>Datenschutz, bedeutet  die Zielseite sieht nicht, von welcher Seite der Besucher kommt (keine Referrer-Informationen)
+                </p>
+
+                <p>
+                    <strong>rel</strong>
+                    <br>eng Beziehung zwischen der aktuellen Seite und der Zielseite; 
+                    <br>z.B. "nofollow" für Suchmaschinen, "noopener" für Sicherheit, "noreferrer" für Datenschutz
+                </p>
+            </section>
+            <section>
+                <h2>4. Email und Telefon-Links</h2>
+
+                <article>
+                    <h3>Email-Links (mailto:)</h3>
+                    <p>
+                        Mit dem <code>mailto:</code> können wir einen Link für eine neue E-Mail in dem standard E-Mail-Client öffnen.
+                    </p>
+                    <pre>
+                    &lt;a href="mailto:beispiel@gmail.com"&gt; E-Mail schreiben &lt;/a&gt;
+                    </pre>
+                    <a  href="mailto:beispiel@gmail.com"> E-Mail schreiben </a>
+                    <p>
+                        Wir können auch einen Betreff und eine Nachricht vorgeben, die automatisch in der E-Mail ausgefüllt werden,
+                        wenn der Link angeklickt wird. 
+                        <br> - %0A steht für einen Zeilenumbruch in der Nachricht.
+                        <br> - %20 steht für ein Leerzeichen.
+                        <br> - %2C steht für ein Komma.
+                        <br> - %3A steht für einen Doppelpunkt.
+                        <br> - %40 steht für das @-Zeichen.
+                        <br> - %3F steht für ein Fragezeichen.
+                        <br> - %80 steht für ein Euro-Zeichen.
+                        <br> - %10 steht für ein Zeilenumbruch.
+
+                    </p>
+                    <a  href="mailto:beispiel@gmail.com?subject=Betreff%20zum%20Test&body=Hallo%20?!%0ANachricht"> E-Mail schreiben mit Betreff und Nachricht </a>
+                </article>
+
+                <article>
+                    <h3>Telefon-Links (tel:)</h3>
+                    <p>
+                        Mit dem <code>tel:</code> können wir einen Link erstellen, der ein Telefonat initiert.
+                        <br> Dieser Link öffnet auf Handys und Tablets direkt den Telefon-App, 
+                        <br> Auf PC-s nur dann, wenn die dafür geeigngetes Applications verfügbar sind.
+                    </p>
+                    <pre>
+                    &lt;a href="tel:+49123456789"&gt; Rufen Sie uns an &lt;/a&gt;
+                    </pre>
+                    <a href="tel:+49123456789"> Rufen Sie uns an </a>
+                </article>
+            </section>
+            <section>
+                <h2>5. Interne Links (Anker-Links)</h2>
+
+                <p>
+                    Mit interne Links /Anker-Links kann man zu bestimmten Abschnitten innerhalb derselben Seite zu springen.
+                </p>
+
+                <pre>
+                    &lt;a href="#ziel"&gt; Zum Ziel springen. Dafür braucht man das Ziel-Element (id="ziel") &lt;/a&gt;
+                    <br>&lt;section id="ziel"&gt; So wird das Ziel gekennzeichnet &lt;/section&gt;
+                </pre>
+
+                <a href="#ziel"> Zum Ziel springen </a>
+                <pre>
+                    &lt;a href="./030_struktur_elemente.html#hinweis"&gt; Zum Hinweis in einer anderen Seite springen. 
+                    <br> Dafür braucht man das Ziel-Element in dem anderen Html-Datei (id="hinweis") &lt;/a&gt;
+                </pre>
+                <a href="./030_struktur_elemente.html#hinweis"> Zum Hinweis in einer anderen Seite springen </a>
+                <p>
+                    Du kannst auch zu einem bestimmten Abschnitt auf einer anderen Seite springen, 
+                    <br>indem du die URL der Seite mit einem # und der ID des Ziel-Elements kombinierst.
+                    <br>Das funktioniert sogar direkt in Browsern: https://de.wikipedia.org/wiki/Basilisk_(Mythologie)#Aachen
+                <pre>
+&lt;a href="https://de.wikipedia.org/wiki/Basilisk_(Mythologie)#Aachen" target="_blank" rel="noopener noreferrer"&gt;Link zu einem Abschnitt auf einer anderen Seite (Wikipedia) &lt;/a&gt;
+                </pre>
+                <a href="https://de.wikipedia.org/wiki/Basilisk_(Mythologie)#Aachen" target="_blank" rel="noopener noreferrer">Basilisk in Aachen</a>
+            </section>
+        </main>        
+    </body>
+</html>

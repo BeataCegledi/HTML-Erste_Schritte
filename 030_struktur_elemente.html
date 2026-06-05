@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML-Strukturelemente (Erklärung)</title>
+    </head>
+    <body>
+        <header>
+            <p>&lt;header&gt; - Kopfbereich der Seite</p>
+
+            <h1>HTML-Strukturelemente</h1>
+
+            <p> Mit diesem Elementen strukturiert man den sichtbaren Inhalt der Seite sinnvoll!</p>
+            <nav>
+            <!-- <nav> = Navigationsbereich (z.B. Menü, Links zu Unterseiten oder Abschnitten)-->
+                <p>&lt;nav&gt; - Navigation (Menübereich)</p>
+                <!-- &lt; bedeutet: <  -->
+                <!-- &gt; bedeutet: >  -->
+
+                <ul>
+                <!-- <ul> = Ungeordnete Liste (z.B. Navigationspunkte) -> Bulletpoint -->
+
+                    <li>
+                        <!-- <li> = Listenelement (Eintrag in einer Liste) -->
+                        <a href="010_hallo.html">Startseite</a>
+                        <!-- <a> = anchor Tag -> Link (z.B. Verweis auf eine andere Seite) 
+                            href = Hypertext Reference 
+                            href="" -> ist der Punkt wo ich die Seite einfüge dich ich verlinken möchte /
+                                        das ist meine Zieladresse 
+                            href="#" -> Platzhalter, der momentan leer ist (wird oft für JavaScript-Interaktionen verwendet) 
+                            zwischen <a> und </a> href="#">...</a> steht der Text, wo man auf den Link klicken kann -->
+                    </li>
+
+                    <li><a href="#">Überschrift</a></li>
+                    <li><a href="#">Listenelemente</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <hr> 
+        <!-- <hr> = Horizontale Trenninie 
+        Semantisch bedeutet es für uns: Hier beginnt ein neuer thematischer Abschnitt -->
+
+        <main>
+            <!-- <main> = Hauptinhalt der Seite (wichtig für Suchmaschinen und Barrierefreiheit) -->
+            <p>&lt;main&gt; - Hauptinhalt der Seite</p>
+
+            <section>
+                <!-- <section> = thematischer Abschnitt innerhalb des Hauptinhalts (z.B. Artikel, Themenblock) 
+                    Wir nutzen die section, wenn wir Inhalte strukturieren oder gruppieren möchten -->
+                <p>&lt;section&gt; - Abschnitt innerhalb des Hauptinhalts</p>
+
+                    <h2>Artikelüberschrift</h2>
+                    <p>Überschriften gehen von h1 (wichtigste Überschrift) bis h6 (weniger wichtige Überschrift)
+                        Sie sind wichtig für die Struktur und Lesbarkeit, Barrierefreiheit der Seite und SEO
+                    </p>
+                    <!-- SEO - Search Engine Optimization = Suchmaschinen-Optimierung -> Es sorgt dafür, dass 
+                        die Seite bei Google möglichst weit oben angezeigt wird -->
+
+                    <h3>Beispielüberschrift</h3>
+                    <h4>Unterpunkt - &lt;h4&gt;</h4>
+                    <h5>Noch kleiner als &lt;h4&gt;</h5>
+                    <h6>Die ist am kleinsten - &lt;h6&gt;</h6>
+            </section>
+
+            <section>
+                <h2> Text-Elemente</h2>
+
+                <article>
+                    <!-- <article> = eigenständiger Inhalt (z.B. Blogbeitrag, Artikel, Nachricht) 
+                        Es ist ein eigenständiger Inhalt, der auch außerhalb des Kontextes der Seite Sinn hat -->
+                    <p>&lt;article&gt; - eigenständiger Inhalt</p>
+
+                    <h3>Absätze und Texte</h3>
+
+                    <p>Das ist ein <strong>Absatz</strong> der mit dem &lt;p&gt; Tag geschrieben wurde. 
+                        Es wird wie ein normaler Fließtext angezeigt.</p>
+                    <!-- <strong> = Fett gedruckter Text (wie <b>), aber INHALTIG wichtig
+                        - Screenreader lesen das oft mit MEHR Nachdruck
+                        - Suchmaschine sagt: Achtung WICHTIG! -->
+
+                    <p>Das ist ein <b>Absatz</b>.
+                    <!-- <b> = Fett gedruckter Text (wie <strong>), aber OPTISCH wichtig, nicht inhaltlich
+                        - absolut keine Bedeutung für Screenreader oder Suchmaschinenk -->
+
+                    <p>Hier ist ein <br> Zeilenumbruch mit dem &lt;br&gt; Tag.</p>
+                </article>
+
+                <hr>
+
+                <article>
+                    <h3>Trennlinien</h3>
+
+                    <p> Die Linie oben wurde mit dem &lt;hr&gt; Tag erstellt. Sie trennt innhaltliche Abschnitte voneinander.</p>
+                </article>
+            </section>
+
+            <aside>
+                <!-- <aside> = Zusätzinformation, Randnotiz, Hinweis, etc. -->
+                <h2 id="hinweis">Hinweis</h2>
+                <p>&lt;aside&gt; wird für zusätzliche Inhalte genutz die nicht zum Hauptinhalt gehören 
+                    z.B. Sidebar, Werbung, Links, Tipps, Infoboxen oder Randnotizen
+                </p>            
+            </aside>
+        </main>
+        <footer>
+            <!-- <footer> = Fußzeile der Seite, enthält z.B. Kontaktinformationen, Impressum, etc. -->
+            <p>&lt;footer&gt; - Fußbereich der Webseite. Ende gut, alles gut!</p>
+    </body>
+</html>
