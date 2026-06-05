@@ -3,132 +3,34 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Anchor-Tags (Links)</title>
+        <title>Erste Schritte in HTML)</title>
     </head>
     
     <body>
         <header>
-            <h1>Anchor-Tags (&lt;a&gt;) - Links in HTML</h1>
+            <h1>HTML Lernen</h1>
 
             <p>
-                Mit den Anchor-Tags können wir Links erstellen. Links führen zu anderen Seiten, Dateien oder zu einer 
-                Stelle auf derselben Seite.
+               Hier findest du Krücken um HTML zu lernen                
             </p>
+            <nav>
+                <ul>
+                    <li> <a href="./020_boilerplate.html">Boilerplate für HTML Sprache</a> </li>                    
+                    <li> <a href="./030_struktur_elemente.html">Struktur Elemente in HTML</a> </li>
+                    <li> <a href="./040_links.html">So machen erstellen wir Linke in HTML</a> </li>
+                </ul>
+            </nav>
         </header>
 
         <hr>
 
         <main>
             <section id="ziel">
-                <h2>1. Grundaufbau eines Links</h2>
-                <p>So sieht ein einfacher Link im Code aus:</p>
-
-                <pre>
-                    &lt;a href="https://www.google.com"&gt;Ich bin ein Link&lt;/a&gt; 
-                </pre>
-
                 <pre>
                  /\_/\\
                 ( o.o )
                  > ^ <
                 </pre>
-
-                <p>So sieht der Link im Browser aus:</p>
-                <a href="https://www.google.com">Ich bin ein Link</a>
-            </section>
-
-            <section>
-                <h2>2. Das Attribut href</h2>
-
-                <p>
-                    href steht für Hypertext Refrence. Das Attribut href gibt an, wohin der Link führt.
-                    Ohne href ist es KEIN richtiger Link! 
-                </p>
-
-                <ul>
-                    <li><code>href="./010_hallo.html"</code> → Link zu einer Datei im gleichen Ordner</li>
-                    <li><code>href="../010_hallo.html"</code> → Link zu einer Datei in einem übergeordneten Verzeichnis</li>
-                    <li><code>href="../../010_hallo.html"</code> → Link zu einer Datei in einem übergeordneten Verzeichnis</li>
-                    <li><code>href="/010_hallo.html"</code> → Startet im Hauptverzeichnis der Webseite (Root)</li>
-                    <li><code>href="#ziel"</code> → Link zu einer Stelle auf derselben Seite</li>
-                    <li><code>href="https://www.google.com"</code> → Link der zu einer anderen Webseite führt</li>
-                </ul>
-
-            </section>
-
-            <section>
-                <h2>3. Link in einem neuen Tab öfnen</h2>
-
-                <p>
-                    Mit <code>target="_blank"</code> öffnet sich der Link in einem neuen Tab:
-                </p>
-
-                <pre>
-                    &lt;a href="https://www.google.com" target="_blank" rel="noopener noreferrer&gt;Ich bin ein Link&lt;/a&gt;
-                </pre>
-
-                <p>So sieht ein Link im Browser aus:</p>
-
-                <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Ich bin ein Link</a>
-
-                <p>
-                    <strong>noopener</strong><br>
-                    Sicherheit bei <code>target="_blank"</code>, das die Zielseite, meine Seite NICHT manipulieren kann.
-                </p>
-
-                <p>
-                    <strong>noreferrer</strong><br>
-                    Datenschutz, bedeutet die Zielseite sieht NICHT, von welcher Seite der Klick kam.
-                </p>
-
-                <p>
-                    <strong>rel</strong><br>
-                    eng. relationship / dt. Beziehung
-                    
-                </p>
-            </section>
-
-            <section>
-                <h2>4. E-Mail und Telefon Links</h2>
-
-                <article>
-                    <h3>E-Mail (mailto)</h3>
-
-                    <pre>
-                    &lt;a href="mailto:beispiel@gmail.com"&gt;E-Mail schreiben&lt;/a&gt;
-                    </pre>
-
-                    <p>
-                        Unser Browser öffnet das Standard E-Mail Programm des Nutzers. Und erstellt automatisch:
-                        Empfänger (E-Mail ist schon ausgefüllt), Betreff: leer, Text: leer.
-                    </p>
-
-                    <a href="mailto:beispiel@gmail.com?subject=Anfrage%20zum%20Test&body=Hallo,%0A">E-Mail schreiben</a>
-                    <!-- nach der E-Mail mit ? trennen kann man den Betreff eintragen
-                        ?subject -> sagt aus das es sich um den Betreff handelt
-                        ?subject=Anfrage -> Anfrage wird im Betreff angezeigt
-                        %20 -> Leerzeichen im Betreff/Text, falls mehr als ein Wort genutzt wird
-                        &body -> sagt das es sich um Text in der E-Mail handelt
-                        %0A -> Zeilenumbruch im Text
-                        &body=Hallo -> Hallo wird als E-Mail Text angezeigt
-                        %2C -> steht für Komma
-                    -->
-                </article>
-
-                <article>
-                    <h3>Telefon (tel)</h3>
-
-                    <pre>
-                    &lt;a href="tel:+491234567890"&gt;Jetzt anrufen&lt;/a&gt;
-                    </pre>
-
-                    <p>
-                        Smartphones und Tablets öffnen direkt die Telefon App zum Anrufen.
-                        Pcs können die Funktion nur nutzen, wenn die dafür zuständige App/ Programm vorhanden ist.
-                    </p>
-
-                    <a href="tel:+491234567890">Jetzt anrufen</a>
-                </article>
             </section>
         </main>
     </body>
