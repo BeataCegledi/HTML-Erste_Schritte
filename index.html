@@ -3,35 +3,116 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Erste Schritte in HTML)</title>
+        <title>Erste Schritte in HTML</title>
+        <style>
+            body {
+                font-family: "Segoe UI", Arial, sans-serif;
+                max-width: 800px;
+                margin: 2rem auto;
+                padding: 0 1.5rem;
+                color: #2d2d2d;
+                background: #fafafa;
+                line-height: 1.6;
+            }
+            header {
+                text-align: center;
+                padding: 2rem 1rem;
+                background: linear-gradient(135deg, #6a82fb, #fc5c7d);
+                color: white;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            header h1 {
+                margin: 0 0 0.5rem 0;
+                font-size: 2.2rem;
+            }
+            header p {
+                margin: 0;
+                font-size: 1.1rem;
+                opacity: 0.95;
+            }
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 2rem 0;
+                display: grid;
+                gap: 1rem;
+            }
+            nav li a {
+                display: block;
+                padding: 1rem 1.25rem;
+                background: white;
+                border-left: 4px solid #6a82fb;
+                border-radius: 8px;
+                text-decoration: none;
+                color: #2d2d2d;
+                font-weight: 500;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                transition: transform 0.15s, box-shadow 0.15s;
+            }
+            nav li a:hover {
+                transform: translateX(4px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                border-left-color: #fc5c7d;
+            }
+            .nummer {
+                display: inline-block;
+                width: 1.8rem;
+                color: #6a82fb;
+                font-weight: bold;
+            }
+            footer {
+                text-align: center;
+                margin-top: 3rem;
+                padding: 1rem;
+                color: #888;
+                font-size: 0.9rem;
+            }
+            pre.cat {
+                text-align: center;
+                color: #6a82fb;
+                font-size: 1rem;
+                margin: 2rem 0;
+            }
+        </style>
     </head>
-    
+
     <body>
         <header>
-            <h1>HTML Lernen</h1>
-
-            <p>
-               Hier findest du Krücken um HTML zu lernen                
-            </p>
-            <nav>
-                <ul>
-                    <li> <a href="./020_boilerplate.html">Boilerplate für HTML Sprache</a> </li>                    
-                    <li> <a href="./030_struktur_elemente.html">Struktur Elemente in HTML</a> </li>
-                    <li> <a href="./040_links.html">So machen erstellen wir Linke in HTML</a> </li>
-                </ul>
-            </nav>
+            <h1>🌐 Erste Schritte in HTML</h1>
+            <p>Eine kleine Sammlung von Lernbeispielen rund um HTML</p>
         </header>
 
-        <hr>
-
         <main>
-            <section id="ziel">
-                <pre>
-                 /\_/\\
-                ( o.o )
-                 > ^ <
-                </pre>
-            </section>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./020_boilerplate.html">
+                            <span class="nummer">01</span> Boilerplate – Grundgerüst einer HTML-Seite
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./030_struktur_elemente.html">
+                            <span class="nummer">02</span> Strukturelemente in HTML
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./040_links.html">
+                            <span class="nummer">03</span> Links erstellen mit dem Anchor-Tag
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <pre class="cat">
+ /\_/\
+( o.o )
+ > ^ <
+            </pre>
         </main>
+
+        <footer>
+            <p>&copy; 2026 Beata Cegledi · Lernprojekt HTML</p>
+        </footer>
     </body>
 </html>
