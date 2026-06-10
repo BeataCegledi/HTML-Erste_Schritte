@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tabellen in HTML</title>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <a href="./index.html">← Startseite</a>
+            </nav>
+
+            <h1>Tabellen in HTML</h1>
+            <p>
+                In diesem Abschnitt kann ich alles über Tabellen in HTML nachlesen. 
+                <br>Tabellen helfen uns dabei, Daten strukturiert und übersichtlich darzustellen.
+                <br>
+                <br>&lt;table border="1"&gt; fügt einen Rahmen um die Tabelle hinzu, 
+                <br>wobei die border="2" die Nummer steht für die Dicke / Schatten des Rahmens.
+                <br>
+                <br>Die wichtigsten HTML-Elemente für Tabellen sind:
+            </p>
+            <ul>
+                <li><strong>&lt;table&gt;</strong> - Die Tabelle Hauptelement(Rahmen / Container)</li>
+                <li><strong>&lt;tr&gt;</strong> - Tabellenzeile (table row)</li>
+                <li><strong>&lt;td&gt;</strong> - Tabellenzelle (table data) - für normale Zellen</li>
+                <li><strong>&lt;th&gt;</strong> - Überschrift für eine Zelle, Definiert die Zeile als Kopfzeile (table header)</li>
+            </ul>
+        </header>
+
+        <main>
+            <section>
+                <h2>1. Einfache Tabelle</h2>
+                <table border="2">
+                    <caption>Beispiel: Tiere</caption>
+                        <tr>
+                            <th>Tier</th>
+                            <th>Art</th>
+                            <th>Zähne</th>
+                        </tr>
+                        <tr>
+                            <td>Hund</td>
+                            <td>Säugetier</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>Katze</td>
+                            <td>Säugetier</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td>Biber</td>
+                            <td>Säugetier</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Schnecke</td>
+                            <td>Wirbeltier</td>
+                            <td>15.000 - 40.000</td>
+                        </tr>
+                        <tr>
+                            <td>Krokodil</td>
+                            <td>Reptil</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>Piranha</td>
+                            <td>Fisch</td>
+                            <td>24-28</td>
+                        </tr>                        
+                </table>
+                <!-- Weitere Tabelleninhalte können hier hinzugefügt werden -->
+            </section>
+            <hr>
+
+            <section>
+                <h2>2. Tabellen mit Kopf-, Körper- und Fußbereichen</h2>
+
+                <p>
+                    Tabellen können in drei Bereiche unterteilt werden: Kopf (thead), Körper (tbody) und Fuß (tfoot). 
+                    Diese Bereiche helfen dabei, die Tabelle besser zu strukturieren und zu formatieren.
+                </p>
+
+                <dl>
+                    <dt><strong>&lt;thead&gt;</strong> = Kopfbereich (Table Head)</dt>
+                    <dd>Hier steht normalerweise die Überschrift der Tabelle.</dd>
+
+                    <dt><strong>&lt;tbody&gt;</strong> = Hauptteil (Table Body)</dt>
+                    <dd>Hier stehen die eigentlichen Daten, also die Informationen, die angezeigt werden sollen.</dd>
+
+                    <dt><strong>&lt;tfoot&gt;</strong> = Fußbereich (Table Foot)</dt>
+                    <dd>Hier stehen die zusammengefassten oder ergänzenden Informationen.<br>z.B. Summen, Durchschnitte, Fazit, Hinweise oder Fußnoten. Beispil</dd>
+                </dl>
+                
+                <table border="1"> 
+                    <caption>Einkaufsliste von Yoda</caption>
+                    
+                    <thead>
+                        <tr>
+                            <th>Produkt</th>
+                            <th>Preis</th>
+                            <th>Menge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Käse</td>
+                            <td>1,00€</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Apfel</td>
+                            <td>0,50€</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Brot</td>
+                            <td>2,00€</td>
+                            <td>2</td>
+                        </tr>
+                        <!-- Weitere Zeilen können hier hinzugefügt werden -->
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td>Summe</td>
+                            <td colspan="2">9,00€</td>
+                        </tr>
+                    </tfoot>
+
+                    <dl>
+                        <dt>colspan = über mehrere Spalten verteilt (column span)</dt>
+                        <dd>Sagt dem Browser, dass eine Tabellenzelle den Platz von mehreren Spalten einnehmen soll.</dd>   
+                    </dl>
+                </table>
+            </section>
+            <hr>
+
+            <section>
+                <h2>3. Spalten- und Zeilenüberschrifen</h2>
+
+                <dl>
+                    <dl>&lt;th scope="col"&gt; = Spaltenübersichten</dl>
+                    <dd>Überschrift gehört zu einer Spalte</dd>
+                </dl>
+            
+                 <dl>
+                    <dl>&lt;th scope="row"&gt; = Spaltenübersichten</dl>
+                    <dd>Überschrift gehört zu einer Zeile</dd>
+                </dl>
+
+                                <table border="2">
+                    <caption>Beispiel: Tiere im Überblick</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Tiere</th>
+                            <th scope="col">Beine/Arme</th>
+                            <th scope="col">Lebensraum</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <!-- Zeilenüberschrift-->
+                            <th  scope="row">Hund</th>
+                            <td>4</td>
+                            <td>Haus</td>
+                        </tr>
+                        <tr>
+                            <!-- Zeilenüberschrift-->
+                            <th  scope="row">Schildkröte</th>
+                            <td>4</td>
+                            <td>Land/Wasser</td>
+                        </tr>
+                        <tr>
+                            <!-- Zeilenüberschrift-->
+                            <th  scope="row">Kraken</th>
+                            <td>8</td>
+                            <td>Wasser</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>4. Zellen verbinden mit colspan und rowspan</h2>
+
+                <dl>
+                    <dt>colspan="2"</dt>
+                    <dd>Zelle geht über zwei Zeilen</dd>
+                </dl>
+
+                <dl>
+                    <dt>rowspan="2"</dt>
+                    <dd>Zelle geht über zwei Zeilen</dd>
+                </dl>
+
+                <table border="2">
+                    ><caption>Beispiel: Wochenplan</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Tag</th>
+                            <th scope="col">Vormittag</th>                            
+                            <th scope="col">Nachmiattag</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">Montag</th>
+                            <td rowspan="2">Schule</td>
+                            <td>Sport</td>                            
+                        </tr>
+                        <tr>
+                            <th scope="row">Dienstag</th>
+                            <td>Hund spazieren</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Mittwoch</th>
+                            <td colspan="2">Wandertag</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+
+    </body>
+</html>

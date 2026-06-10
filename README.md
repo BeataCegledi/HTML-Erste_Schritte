@@ -19,6 +19,13 @@ Von jeder Themenseite führt ein **„← Startseite"**-Link zurück zur Übersi
 | `020_boilerplate.html` | Grundgerüst | `<!DOCTYPE>`, `<html>`, `<head>`, `<body>`, Meta-Tags, Viewport |
 | `030_struktur_elemente.html` | Strukturelemente | `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>` |
 | `040_links.html` | Links / Anker-Tags | `<a href>`, relative & absolute URLs, `target`, `mailto:`, `tel:`, Anker (`#id`) |
+| `050_listen.html` | Listen | `<ol>`, `<ul>`, `<dl>` mit `<dt>` / `<dd>`, Verschachtelung |
+| `060_tabellen.html` | Tabellen | `<table>`, `<tr>`, `<td>`, `<th>`, `<thead>`, `<tbody>`, `colspan`, `rowspan` |
+| `070_kontaktformular.html` | Formulare | `<form>`, `<input>`, `<label>`, `<textarea>`, `<select>`, Validierung |
+| `080_medien.html` | Medien-Übersicht | Weiterleitung in den Ordner `medien/` |
+| `medien/index.html` | Bilder, Audio, Video | `<img>`, `<audio>`, `<video>`, Pfade zu Mediendateien |
+| `style/index.html` | CSS einbinden | Inline, Internes `<style>`, Externes `<link rel="stylesheet">` |
+| `090_CSS_Selektoren/index.html` | CSS Selektoren | Element-, Klassen-, ID-Selektoren, Kombinatoren |
 
 ## 💡 Behandelte HTML-Konzepte
 
@@ -27,10 +34,15 @@ Von jeder Themenseite führt ein **„← Startseite"**-Link zurück zur Übersi
 | Semantische Elemente | `<header>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>` |
 | Überschriften-Hierarchie | `<h1>` bis `<h6>` mit Erklärung zur Verwendung |
 | Textauszeichnung | `<p>`, `<br>`, `<strong>`, `<b>`, `<i>`, `<u>`, `<code>`, `<pre>` |
-| Listen | `<ul>` mit `<li>` |
+| Listen | `<ul>`, `<ol>`, `<dl>` mit `<li>` / `<dt>` / `<dd>` |
+| Tabellen | `<table>`, `<tr>`, `<td>`, `<th>`, `colspan`, `rowspan` |
+| Formulare | `<form>`, `<input>`, `<label>`, `<textarea>`, `<select>` |
+| Medien | `<img>`, `<audio>`, `<video>` mit `controls` |
 | Links | interne, relative, absolute, `mailto:`, `tel:`, Sprungmarken mit `#id` |
 | HTML-Entities | `&lt;`, `&gt;`, `&copy;`, `&amp;` |
 | Meta-Angaben | `charset`, `viewport` (Responsive Design) |
+| CSS einbinden | Inline, Internes `<style>`, Externes `<link>` |
+| CSS Selektoren | Element-, Klassen-, ID-Selektoren, Kombinatoren |
 
 ## ▶️ Verwenden
 

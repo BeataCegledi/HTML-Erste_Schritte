@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kontakformular</title>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <a href="./index.html">← Startseite</a>
+            </nav>
+
+            <h1>Kontaktformulare in HTML</h1>
+
+            <p>Formulare helfen uns dabei, Daten von Nutzern einzusammeln.
+                <br>Die wichtigste Bausteine sind:
+            </p>
+
+            <ul>
+                <li><strong>&lt;form&gt;</strong> = der Formular Rahmen (Container)</li>
+                <li><strong>&lt;label&gt;</strong> = Beschrifung für die Eingabefelder</li>
+                <li><strong>&lt;input&gt;</strong> = Eingabefeld (z.B.: Name, Passwort, E-mail, Telefonnummer, etc.)</li>
+                <li><strong>&lt;textarea&gt;</strong> = Ein großes Textfeld (z.B.:  für Nachrichten)</li>
+                <li><strong>&lt;select&gt;</strong> und <strong>&lt;option&gt;</strong> = Dropdown Auswahl</li>
+                <li><strong>&lt;button&gt;</strong> = Button (z.B.: Absenden, Zurücksetzen)</li>
+            </ul>
+        </header>
+
+        <main>
+            <section>
+                <h2>1. Das einfache Kontaktformular</h2>
+
+                <p>Ein Kontakformular besteht meistens aus Name, E-Mail und Nachricht</p>
+
+                <form>
+                    <p> <!-- <p> p-Tag  muss nicht sein, sieht aber strukurierter aus -->
+                        <label for="name">Name:</label>
+                        <!-- for= " " muss die selbe sein wie im input id="" und muss einzigartig sein -->
+                        <input type="text" name="Dein Name" id="name">
+                    </p>
+
+                    <p>
+                        <label for="email">E-Mail: </label>
+
+                        <input type="email" name="email" id="email">
+                    </p>
+
+                    <p>
+                        <label for="message">Nachricht: </label>
+
+                        <textarea name="message" id="message" cols="50" rows="5"></textarea>
+                    </p>
+
+                    <button type="submit">Absenden</button>
+                </form>
+                    <dl>
+                        <dt>for (bei &lt;label&gt;) + id</dt>
+                        <dd>Verbindet Label und Feld. Klickst du auf das Label, springt der Cursor ins Feld</dd>
+                    </dl>
+            </section>
+
+            <section>
+                <h2>2. Die wichtigsten Form-Attribute: action und method</h2>
+
+                <dl>
+                    <dt>action=""</dt>
+                    <dd>Wohin die Daten geschickt werden (Bsp.: Server Adresse oder ein Skript)</dd>
+                </dl>
+
+                <dl>
+                    <dt>method="GET"</dt>
+                    <dd>Daten werden in die URL (=Uniform Resource Locator) geschrieben.
+                        <br>Gut für eine Suche, schlecht für sensiblen Daten.</dd>
+                </dl>
+                
+                <dl>
+                    <dt>method="POST"</dt>
+                    <dt>Daten werden im Hintergrund gesendet (Standard Formular).</dt>
+                </dl>
+
+                <form action="./060_tabellen.html" method="post">
+                    <p>
+                        <label for="topic">Thema: </label>
+                        <input type="text" name="topic" id="topic" placeholder="Rückfragen zum Kurs" size="40">
+                        <!--    placeholder = Hinweis was eingetragen werden soll /Kommentare
+                                size= verändert die Größe
+                                size="40" = Platz für ca. 40 Zeichen -> Größe wird angepasst-->
+                    </p>
+
+                    <button type="submit">Senden</button>
+
+                    <p>HINWEIS: Ohne echten Server passiert beim Absenden oft nichts Sichtbares
+                        <br>aber HTML "baut" das Formular korrekt!
+                    </p>
+
+                    <p>
+                    HINWEIS: Ohne echten Server passiert beim Absenden oft nichts, aber HTML "baut" das Formular korrekt!
+                    </p>
+            </section>
+
+            <section>
+                <h2>3. Input-Typen und ihre Funktionen</h2>
+
+                <p>
+                    Der <strong>Typ</strong> sagt dem Browser, welche Art von Daten erwartet werden. Dadurch bekommt man die passenden Tastaturen am Handy/Tablet und manchmal auch eine automatische Überprüfung.
+                </p>
+
+                <form>
+                    <p>
+                        <label for="mail">E-Mail: </label>
+                        <input type="email" name="mail" id="mail" placeholder="beispiel@gmail.com">
+                    </p>
+
+                    <p>
+                        <label for="tel">Telefonnummer: </label>
+                        <input type="tel" name="tel" id="tel" pattern="[0-9+ ]+" placeholder="+49........">
+                        <!-- pattern=[0-9] + -> 0-9 = 0 bis 9 als Zahlen erlaubt
+                        -> []+ = bedeutet mindestens eine Ziffer
+                        -> [+] = Vorwahl mit + ist erlaubt anstatt 00-->
+                    </p>
+
+                    <p>
+                        <label for="date">Termin</label>
+                        <input type="date" name="date" id="date">
+                    </p>
+
+                    <p>
+                        <label for="password">Passwort: </label>
+                        <input type="password" name="password" id="password" placeholder="Passwort eingeben" required minlength="8" maxlength="20">
+                        <!--required = bedeutet nichts anderes als das Feld MUSS ausgefüllt werden (Pflichtfeld)
+                        minlenght = gibt die mindest Anzahl von Zeichen/Buchstaben an
+                        maxlenght = gibt die maximal Anzahl von Zeichen/Buchstaben an-->
+                    </p>
+
+                    <p>
+                        <label for="prio">Priorität (1-5): </label>
+                        <input type="number" name="prio" id="prio" min="1" max="5">
+                        <!-- min/max = Grenze der Zahlen oder eines Datums
+                        -> min = minimum (kleinster Wert)
+                        -> max = maximum (größter Wert)-->
+                    </p>
+
+                    <button type="submit">Senden</button>
+                </form>
+            </section>
+
+            <section>
+                <h2>4. Pflichtfelder und einfache Validierung</h2>
+
+                <p>
+                    Mit <strong>required</strong> kann man Felder Verpflichtend stellen.
+                    <br>Der Browser verhindert dann das Absenden, wenn etwas fehlt.
+                </p>
+
+                <form>
+                    <p>
+                        <label for="name007">Name (Pflciht): </label>
+                        <input type="email" name="mail007" id="mail007" required>
+                    </p>
+
+                    <p>
+                        <label for="msg">Nachricht (min. 10 Zeichen lang sein):</label>
+                        <textarea name="msg" id="msg" minlength="10" maxlength="160" required></textarea>
+                    </p>
+
+                    <button type="submit">Senden</button>
+                </form>
+
+                <dl>
+                    <dt>HTML Validierung</dt>
+                    <dd>... prüft Eingabe direkt im Browser, bevor das Formular abgeschickt wird.</dd>
+                    <dd>Vorteil: Sofortige Rückmeldung an den Benutzer, falls etwas falsch eingegen wurde.</dd>
+                    <dd>Nachteil: Kann mit F12 oder eigenen Anfragen umgangen werden.</dd>
+                </dl>
+
+                <dl>
+                    <dt>Server Validierung</dt>
+                    <dd>...prüft die Daten nach dem Absenden noch einmal auf dem Server.</dd>
+                    <dd>Vorteile: Kann nicht mit F12 umgangen werden | Sorgt für Sicherheit</dd>
+                    <dd>Nachteil: Nicht so einfach wie HTML Validierung in überprüfung und Geschwindigkeit</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h2>5 Auswahlfelder: select, radio, checkbox</h2>
+
+                <dl>
+                    <dt>radio</dt>
+                    <dd>Nur eine Option ist auswählbar</dd>
+                </dl>
+
+                <dl>
+                    <dt>select</dt>
+                    <dd>Ist eine Auswahlliste zum Ausklappen</dd>
+                </dl>
+
+                <dl>
+                    <dt>checkbox</dt>
+                    <dd>Ist variable zwischen an und aus oder meherere Auswahlmöglichkeitien</dd>
+                </dl>
+
+                <form>
+                    <p>
+                        <label for="reason">Warum schreibst du uns?</label>
+                        <select name="reason" id="reason" required>
+                            <!--required = Das ist ein Pflichtfeld
+                                selected = Diese Option ist beim Laden der Seite auswählen
+                                disabled = Option kann NICHT ausgewählt werden -> Benuitzer muss andere Option wählen-->
+                            <option value="" disabled selected>Bitte wähle aus</option>
+                            <option value="frage">Ich habe eine Frage</option>
+                            <option value="feedback">Ich möchte Feedback geben</option>
+                            <option value="support">Ich brauche Hilfe</option>
+                            <option value="cofee">Der Kafee ist alle!</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <h3>Kontaktwunsch: </h3>
+                        <input type="radio" name="contact" id="contactMail" value="email">
+                        <label for="contactMail">per E-Mail</label>
+
+                        <br>
+                        <input type="radio" name="contact" id="contactPhone" value="telefon">
+                        <label for="contactPhone">per Telefon</label>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" name="privacy" id="privacy" required>
+                        <label for="privacy">Ich akzeptiere die Datenschutzbedienungen (Pflicht) !!!</label>
+                    </p>
+                
+                    <button type="submit">Senden</button>
+                </form>
+            </section>
+
+            <section>
+                <h2>6. Buttons: submit, reset, button</h2>
+
+                <dl>
+                    <dt>type="submit"</dt>
+                    <dd>Sendet das Formular ab.</dd>
+                </dl>
+
+                <dl>
+                    <dt>type="reset"</dt>
+                    <dd>Setzt alle Felder auf den Startzustand zurück.</dd>
+                </dl>
+
+                <dl>
+                    <dt>type="button "</dt>
+                    <dd>Macht erst etwas, wenn JavaScript hinzugefügt wurde.</dd>
+                </dl>
+
+                <form>
+                    <p>
+                        <label for="demo">Testfeld: </label>
+                        <input type="text" name="demo" id="demo" placeholder="Schreibe irgendetwas hierher!">
+                    </p>
+
+                    <button type="submit">Absenden (submit)</button>
+                    <button type="reset">Zurücksetzen (reset)</button>
+                    <button type="button">Macht erst etwas bei JS (buttin</button>
+                </form>
+            </section>
+        </main>
+        
+    </body>
+</html>

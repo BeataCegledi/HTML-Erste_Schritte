@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=, initial-scale=1.0">
+        
+        <!--Externes CSS-->
+        <link rel="stylesheet" href="./style.css">
+        
+        <title>CSS einbinden</title>
+
+
+        <!--Internes CSS-->
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                line-height: 1.5; /*Zeilenabstand*/
+            }
+
+            .intern{ /*spricht die Klasse intern mit . und Klassenname an*/
+                color:darkgreen;
+                background-color: #e6ffe6;
+                padding: 4px;
+            }
+
+            .box{  /* es ist doppelt also auch bei Klasse intern und extern. 
+                Deshalb spielt auch Rolle die Reihenfolge von Interne und Externe CSS 
+                weil die zweite in der Reiche überschreibt die vorherige. 
+                Normalerweise soll man den Link (also den Externe CSS) erstmal 
+                schreiben und erst danach den <style>-Tag für Interne CSS*/
+                    
+                border: 5px black solid;
+                padding: 10px;
+                margin:  10px 0; /*erste Zahl: oben-rechts und zweite Zahl: unten-links*/
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="../index.html">← Startseite</a>
+            </nav>
+
+            <h1>CSS einbinden - Inline, Intern und Extern</h1>
+            <p>Es gibt drei Arten, CSS in HTML eiinzubinden</p>
+
+            <ol>
+                <li><strong>Inline CSS</strong> = direkt im HTML geschrieben</li>
+                <li><strong>Interne CSS</strong> = im &lt;style&gt;-Tag im head geschrieben</li>  
+                <li><strong>Externe CSS</strong> = in einer .css Datei angelegt</li>                              
+            </ol>
+        </header>
+        <main>
+            <section>
+                <h2>1. Inline CSS</h2>
+
+                <p> Inline CSS wird direkt im HTML Tag mit dem Attribut <code>style</code> geschrieben!</p>
+            
+                <p style="color:blueviolet; background-color:aquamarine; padding: 8px;">
+                    Dieser Text ist mit Inline CSS gestylt.
+                </p>
+
+                <pre>
+                    &lt;p style="color:blueviolet;              -> color = Farbe der Schrift
+                                background-color:aquamarine; -> background-color = Hintergrundfarbe
+                                padding: 8px;"&gt;              -> padding = Innenabstand (Platz zwischen 
+                                                                        dem Imhalt eines Elements und seinem Rand)
+                
+                                Farben können in englischen Namen, hex-Werten oder aber RGB dargestellt werden!
+                </pre>
+
+                <p>
+                    <strong>Wann ist das sinnvill?</strong> Fast nie, nur für schnelle Test oder einzelne Ausnahmen. <br>
+                    <strong>Warum ist das schlecht?</strong> Unübersichtlich und sehr schlecht wartbar.
+                </p>
+            </section>
+
+            <section>
+                <h2>2. Interne CSS wird im head mit &lt;style&gt;-Tag geschrieben</h2>
+            
+                <p>
+                    Interne CSS steht im head im &lt;style&gt;-Tag der HTML Datei und es gilt für die gesamte Seite!
+                </p>
+
+                <article class="box intern">
+                    <p>
+                        Dieser Bereich ist mit internem CSS gestylt.
+                    </p>
+                </article>
+
+                <pre>
+                    lt;style&gt;
+                        Selektor{
+                            eigenschaft: wert;
+                        }
+
+                        body{
+                            font-family: Arial, Helvetica, sans-serif;  -> bestimmt die Schritfart
+                            line-height: 1.5;                           -> bestimmt den Zeilenabstand
+                        }
+
+                        .intern{ /*spricht die Klasse intern mit . und Klassenname an*/
+                            color:darkgreen;               -> color = Farbe der Schrift
+                            background-color: #e6ffe6;     -> background-color = ist die Hintergrundfarbe
+                            padding: 4px;                  -> Innenabstand
+                        }
+
+                        .box{
+                            border: 5px black solid;    -> border ist der Rahmen | 2px ist die Rahmengröße 
+                                    | black ist die Rahmenfarbe | Solid ist die feste/ darstellund des Rahmens
+                            padding: 10px;              -> Innenabstend
+                            margin:  10px 0;            -> margin = Außenabstand (oben, rechts, unten links) 
+                                                | 10px steht für oben + unten und 0px steht für rechts + links*/
+                        }
+                </pre>
+
+                <p>
+                    <strong>Wann ist es sinnvoll?</strong> Bei kleineren Projekten und Übungen. <br>
+                    <strong>Warum ist es sinnvoll?</strong> Alles in einer Datei ist und es damit leichter zu verstehen ist.
+                </p>
+            </section>
+
+            <section>
+                <h2>3. Externe CSS (separate Datei)</h2>
+
+                <p>
+                    Externe CSS liegt in einer eigenen Datei (z.B.: <code>styles.css</code>) 
+                    und wird mit einem &lt;link&gt;-Tag eingebunden.
+                </p>
+
+                <article class="box extern">
+                    <p>
+                        Dieser Bereich ist mir einem externem CSS gestylt wurden.
+                    </p>
+                </article>
+
+                <pre>
+                    .extern{
+                    color:antiquewhite;         -> Farbe der Schrift
+                    background-color: #3333cc;  -> Hintergrundfarbe
+                    padding: 10px               -> Innenabstand
+                    }
+                </pre>
+
+                <p>
+                    <strong>Wann ist es Sinnvoll?</strong> Fast immer bei "echten" Webseiten! <br>
+                    <strong>Warum?</strong>Sauber, wiederverwendbar und leicht wartbar.
+                </p>
+            </section>
+
+            <section>
+                <h2>4. Priorität und Reihenfolge</h2>
+
+                <p>
+                    Wenn mehrere Styles auf das selbe Element wirken, gilt:
+
+                    (wenn ich gut verstanden habe die Reihenfolge des schreiben im head ist auch entscheidend)
+                </p>
+
+                <ol>
+                    <li>Inline CSS (höchste Priorität)</li>
+                    <li>Interne Css (mittlere Priorität)</li>
+                    <li>Externes CSS (niedrigste Priorität)</li>
+                </ol>
+
+                <p class="extern intern" style="background-color: purple;">
+                    Welche Farbe sehe ich? 
+                    Purple weil es Inline ist
+                </p>
+            </section>
+
+        </main>        
+    </body>
+</html>

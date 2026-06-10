@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Listen in HTML</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="./index.html">← Startseite</a>
+            </nav>
+
+            <h1>Listen in HTML</h1>
+            <p>
+                In diesem Abschnitt kann ich alles über Listen in HTML nachlesen. HTML kennt:
+                <br>   
+                <br><strong>&lt;ol&gt;</strong> - Geordnete /Sortierte Liste (ordered list) - Nummerierung oder Aufzählungszeichen
+                <br><strong>&lt;ul&gt;</strong> - Ungeordnete / unsortierte Liste (unordered list) - Aufzählungszeichen
+                <br><strong>&lt;dl&gt;</strong> - Definitionsliste / beschreibende Liste (description list) - Definitionen, Begriffe und Beschreibungen
+            </p>
+        </header>
+
+        <hr>
+        <main>
+            <section>
+                <h2>1. Wann nutzen wir welche Liste?</h2>
+
+                <ul>
+                    <li><strong>&lt;ol&gt;</strong> → Wenn die Reihenfolge wichtig ist (z.B. Anleitung, Rangliste, Rezept, Top 10 Listen, etc.)</li>
+                    <li><strong>&lt;ul&gt;</strong> → Wenn die Reihenfolge egal ist (z.B. Einkaufsliste, Liste von Features, etc.)</li>
+                    <li><strong>&lt;dl&gt;</strong> → Für Begriffe mit Erklärungen, Definitionen oder Beschreibungen (z.B. Glossar, FAQ, Wörterbuch, etc.)</li>
+                </ul>
+            </section>
+            <hr>
+            <section>
+                <h2>2. Sortierte Listen (&lt;ol&gt;)</h2>
+
+                <p>
+                    Eine Sortierte Liste nummeriert die Listenelemente automatisch. 
+                </p>
+
+                <h3>Beispiel (Inhaltsverzeichnis):</h3>
+                <ol>
+                    <li>Grundaufbau eines Links</li>
+                    <li>Das Attribut href</li>
+                    <li>Link in einem neuen Tag öffnen</li>
+                    <li>Email und Telefon Links</li>
+                    <li>Interne Links (Sprungmarker)</li>
+                </ol>
+                <h3>Wichtige Attribute:</h3>
+                <ul>
+                    <li><strong>type</strong>="1": 1, A, a, I, i -> Bestimmt das Nummerierungsverfahren</li>
+                    <li><strong>start</strong>: Startzahl für die Nummerierung</li>
+                    <li><strong>reversed</strong>: Nummerierung rückwärts</li>
+                </ul>
+
+                <h3>Beispiel (Tiere):</h3>
+                <ol type="A">
+                    <li>Hund</li>
+                    <li>Katze</li>
+                    <li>Kuh</li>
+                    <li>Meerschweinchen</li>
+                    <li>Pinguin</li>
+                </ol>
+
+                <ol type="I" start="100">
+                    <li>Hund</li>
+                    <li>Katze</li>
+                    <li>Kuh</li>
+                    <li>Meerschweinchen</li>
+                    <li>Pinguin</li>
+                </ol>
+
+                <ol type="a" start="16" reversed>
+                    <li>Hund</li>
+                    <li>Katze</li>
+                    <li>Kuh</li>
+                    <li>Meerschweinchen</li>
+                    <li>Pinguin</li>
+                </ol>
+                <hr>
+            </section>
+
+            <section>
+                <h2>3. Unsortierte Listen (&lt;ul&gt;)</h2>
+
+                <p>
+                    Eine Unsortierte Liste stellt Aufzählungen dar, bei denen die Reihenfolge /Priorität egal ist.
+                </p>
+
+                <h3>Beispiel (Städte):</h3>
+                <ul>
+                    <li>München</li>
+                    <li>Rom</li>
+                    <li>Nürnberg</li>
+                    <li>Budapest</li>
+                </ul>
+
+                <h3>Wichtige Attribute:</h3>
+                <ul>
+                    <li><strong>type</strong>: none, circle, square, disc (Standard) -> Art der Aufzählungszeichen</li>
+                </ul>
+
+                <h3>Beispiel (Städte):</h3>
+                <p>Circle:</p>
+                <ul type="circle">
+                    <li>München</li>
+                    <li>Rom</li>
+                    <li>Nürnberg</li>
+                    <li>Budapest</li>
+                    <li>Bangkok</li>
+                </ul>
+                <p>Square:</p>
+                <ul type="square">
+                    <li>München</li>
+                    <li>Rom</li>
+                    <li>Nürnberg</li>
+                    <li>Budapest</li>
+                    <li>Bangkok</li>
+                </ul>
+                <p>Disc:</p>
+                <ul type="disc">
+                    <li>München</li>
+                    <li>Rom</li>
+                    <li>Nürnberg</li>
+                    <li>Budapest</li>
+                    <li>Bangkok</li>
+                </ul>
+                <p>None:</p>
+                <ul type="none">
+                    <li>München</li>
+                    <li>Rom</li>
+                    <li>Nürnberg</li>
+                    <li>Budapest</li>
+                    <li>Bangkok</li>
+                </ul>
+                <hr>
+            </section>
+
+            <section>
+                <h2>4. Beschreibende Listen (&lt;dl&gt; = Description List)</h2>
+
+                <p>
+                    Eine Beschreibende Liste stellt Begriffe mit ihren Erklärungen oder Definitionen dar.
+                    <br>
+                    Sie besteht aus <strong>&lt;dt&gt;</strong> (Definition Term) für den Begriff 
+                    <br>und <strong>&lt;dd&gt;</strong> (Definition Description) für die Beschreibung oder Erklärung.
+                </p>
+
+                <h3>Beispiel (Begriffe aus der IT):</h3>
+
+                <dl>
+                    <dt>&lt;dt&gt;HTML&lt;/dt&gt;</dt>
+                    <dd>&lt;dd&gt;HyperText Markup Language - Aufzeichnungssprache zur strukturierung von Webseiten&lt;/dd&gt;</dd>
+
+                    <dt>CSS</dt>
+                    <dd>Cascading Style Sheets - Formatierungssprache für das Design und Layout von Webseiten</dd>
+
+                    <dt>JavaScript</dt>
+                    <dd>Programmiersprache für interaktive Webseiten und Webanwendungen</dd>
+
+                    <dt>HTTP</dt>
+                    <dd>HyperText Transfer Protocol - Protokoll für die Übertragung von Daten im Web</dd>
+
+                    <dt>PHP</dt>
+                    <dd>Personal Home Page - Scriptsprache für die Entwicklung dynamischer Webseiten</dd>
+                    
+                    <dt>API</dt>    
+                    <dd>Application Programming Interface - Schnittstelle für die Interaktion zwischen Softwareanwendungen</dd>
+
+                </dl>
+
+                <h3> Mehrere Beschreibungen für einen Begriff</h3>
+                <dl>
+                    <dt>&lt;dt&gt;HTML&lt;/dt&gt;</dt>
+                    <dd>&lt;dd&gt;HyperText Markup Language - Aufzeichnungssprache zur strukturierung von Webseiten&lt;/dd&gt;</dd>
+                    <dd>&lt;dd&gt;Wird verwendet, um die Struktur und den Inhalt von Webseiten zu definieren&lt;/dd&gt;</dd>
+                    <dd>&lt;dd&gt;Besteht aus Elementen, die durch Tags dargestellt werden (z.B. &lt;h1&gt;, &lt;p&gt;, &lt;a&gt;, etc.)&lt;/dd&gt;</dd>
+
+                    <dt>CSS</dt>
+                    <dd>Cascading Style Sheets - Formatierungssprache für das Design und Layout von Webseiten</dd>
+                    <dd>Ermöglicht die Trennung von Inhalt (HTML) und Design (CSS)</dd>
+
+                    <dt>JavaScript</dt>
+                    <dd>Programmiersprache für interaktive Webseiten und Webanwendungen</dd>
+                    <dd>Wird verwendet, um dynamische Inhalte zu erstellen und Benutzerinteraktionen zu ermöglichen</dd>
+                <hr>
+            </section>
+
+            <section>
+                <h2>5. Verschachtelte Listen</h2>
+
+                <p>
+                    Listen können auch in anderen Listen eingebettet werden, um hierarchische Strukturen darzustellen. (z.B. Menüs und Kategorien, etc.)
+                </p>
+
+                <h3>Beispiel (Elektrogeräte):</h3>
+                <ul>
+                    <li>Produkte
+                        <ol>
+                            <li>Handys</li>
+                                <ul>
+                                    <li>iOS</li>
+                                    <li>Androids</li>
+                                </ul>
+                            <li>Laptops</li>
+                            <li>Tablets</li>
+                        </ol>
+                    </li>
+                    <li>Service
+                        <ol>
+                            <li>Reparatur</li>
+                            <li>Garantie</li>
+                            <li>Kundendienst</li>
+                        </ol>
+                </ul>
+                
+                <h3>Anleitung: Verschachtelte Listen in HTML</h3>
+                <ol>
+                    <li>Erstelle zuerst eine normale Liste mit &lt;ul&gt; oder &lt;ol&gt;</li>
+                    <li>Lege einen Listeneintrag mit &lt;li&gt; an</li>
+                    <li>Schreibe den Text für den Haupteintrag in dieses &lt;li&gt;</li>
+                    <li>Öffne innerhalb desselben &lt;li&gt; eine neue Liste (&lt;ul&gt; oder &lt;ol&gt;)</li>
+                    <li>Lege in dieser neuen Liste die Unterpunkte mit &lt;li&gt; an</li>
+                    <li>Schließe zuerst die Unterliste und danach das äußere &lt;li&gt;</li>
+                </ol>
+                
+        </main>
+    </body>
+</html>

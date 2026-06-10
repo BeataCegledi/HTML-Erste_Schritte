@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Selektoren</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="../index.html">← Startseite</a>
+            </nav>
+
+            <h1>Selektoren in CSS</h1>
+
+            <p>
+                Selektoren sind "Auswähler", sie bestimmen, welche HTML-Elemente du mit CSS gestalten kannst.
+            </p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Erklärung der CSS Selektoren</h2>
+                
+                <article>
+                    <h3>1. Universalselektor: <code>*</code></h3>
+
+                    <p>
+                        <strong>Was macht er?</strong> Der wählt wirklich <em>alles</em> aus
+                        Jedes einzelne Element der Seite wird ausgewählt.
+                    </p>
+                    <p>
+                        <strong>Wann ist er nützlich?</strong> vor allem am Anfang,
+                        wenn man Grundeinstellungen für die ganze Seite setzen möchte.
+                    </p>
+
+                    <pre>
+                        <code>
+                            *{
+                                font-family:Arial, Helvetica, sans-serif;
+                                line-height: 1.5;
+                                box-sizing: border-box; 
+                                padding: 0;
+                                margin: 0;              
+                            }
+                        </code>
+                </article>
+                <hr>
+                <article>
+                    <h3>2. Elementselektor: <code>body</code> oder <code>article</code></h3>
+                
+                    <p>
+                        <strong>Was macht er?</strong> Er spricht alle HTML Elemente eines 
+                        bestimmten Typs an.
+                    </p>
+                    <p>
+                        <strong>Wann benutzen wir ihn?</strong> Wenn alle gleichen Elemente gleich aussehen sollen.
+                    </p>
+
+                    <pre>
+                        body{
+                            background: linear-gradient(to bottom, #f606da, #f8fcff);
+                            color: #1b0677;
+                        }
+
+                    </pre>
+                </article>
+
+                <article>
+                    <h3>3. Klassenselektor <code>.class</code></h3>
+
+                    <p>
+                        <strong class="wichtig">Was macht er?</strong> Er wählt alle Elemente aus, die dieselbe Klasse haben.
+                    </p>
+                    <p>
+                        <strong>Warum ist das praktisch?</strong> Weil man damit mehrere Elemente gemeinsam 
+                        <br>gestalten kann, auch wenn diee unterschiedliche Tags haben. 
+                    </p>
+
+                    <pre>
+                        .wichtig{
+                            color: deeppink;
+                        }
+                    </pre>
+                </article>
+
+                <article>
+                    <h3>4. ID-Selektor <code>#id</code></h3>
+
+                    <p>
+                        <strong id="wichtig">Was macht er?</strong> 
+                        Wählt  genau ein Element aus mit einer Bestimmten ID.
+                    </p>
+                    <p>
+                        <strong>WICHTIG:</strong> Eine ID sollte nur EINMAL auf einer Seite vorkommen.
+                    </p>
+
+                    <pre>
+                        <code>  
+                            #wichtig{
+                                color:#0cf52f
+                            }
+                        </code>    
+                    </pre>
+                </article>
+
+                <article>
+                    <h3>5. Gruppenselektor: <code>label, h2, input</code></h3>
+                        <p>
+                            <strong>Was macht er?</strong> Fasst mehrere Seektoren zusammen
+                        </p>
+                        <p>
+                            <strong>Warum ist das hilfsreich?</strong>Weil du denselben CSS-code
+                            nicht doppelt schreiben musst.
+                        </p>
+
+                        <pre>
+                            h2,h3{
+                                color: #f7a71d;
+                            }
+                        </pre>
+                </article>
+
+                <article>
+                    <h3>6. Nachfahrenselektor: <code>article p</code></h3>
+
+                    <p>
+                        <strong>Was macht er?</strong> Wählt alle <code>p</code> Elemente, 
+                        die sich innerhalb eines <code>article</code> befinden
+                    </p>
+
+                    <p>
+                        <strong>WICHTIG:</strong> Es ist egal, ob das <code>p</code> direkt drin ist oder
+                        noch tiefer verschächtelt.
+                    </p>
+
+                    <pre>
+                        <code>
+                            article strong{
+                                color: #e083e5;
+                            }
+                        </code>
+                    </pre>
+                </article>
+
+                <article>
+                    <h3>7. Kindselektor: <code>article > h3</code></h3>
+
+                    <p>
+                        <strong>Was macht er?</strong> Er wählt nut die <code>h3</code> Elemente aus,die 
+                        DIREKT in einer <code>article</code> liegen.
+                    </p>
+                    <p>
+                        <strong>WICHTIG</strong> Nur DIREKTE Kinder werden ausgewählt, keine Enkel und keine Urenkel!
+                    </p>
+
+                    <pre>
+                        <code>
+                            article > h3{
+                                color:darkgreen;
+                                text-decoration: underline wavy;
+                            }
+                        </code>
+                    </pre>
+                </article>
+
+                <article>
+                    <h3>8. Direkte Nachbarselektor: <code>h1 + p</code></h3>
+                    <p>
+                        <strong>Was macht er?</strong> Er wählt den ERSTEN <code>p</code> Element direkt
+                        nach einem <code>h1</code> aus.
+                    </p>
+                    <p>
+                        <strong>WICHTIG</strong> Wirklich nur der DIREKTE Nachbar wird ausgewählt!
+                    </p>
+
+                    <pre>
+                        <code>
+                            h1 + p{
+                                color: seashell;
+                            }
+                        </code>
+                    </pre>
+                </article>
+
+                <article>
+                    <h3>9. Allgemeiner Geschwisterselektor: <code>h3 ~ p</code></h3>
+
+                    <p>
+                        <strong>Was macht er?</strong> Er wählt alle <code>p</code> Elemente aus, die nach
+                        einem <code>h3></code> kommen und auf der selben Ebene liegen.
+                    </p>
+
+                    <p>
+                        <strong>Unterschied zu <code>+</code> :</strong> Hier wird nicht nur der direkte Nachbar 
+                        gewählt, sondern mehrere passende Geschwister.
+                    </p>
+
+                    <pre>
+                        <code>
+                            h3 ~ p{
+                                color:darkslateblue;
+                            }
+                        </code>
+                    </pre>
+                </article>
+
+                <article>
+                    <h3>10. Attributselektor: <code>input[type="password"]</code></h3>
+                    <p>
+                        <strong>Was macht er?</strong> Er wählt nur Elemente aus, die ein 
+                        bestimmtes Attribut besitzen.
+                    </p>
+                    <p>
+                        <strong>Wofür ist es gut?</strong> Besonders praktisch für Formulare.
+                    </p>
+
+                    <pre>
+                        <code>
+                            input[type="password"]{
+                                border: 2px solid tomato;
+                            }
+                        </code>
+                    </pre>
+                </article>
+            </section>
+            <hr>
+
+            <section>
+                <h2>Übersicht: CSS Selektoren</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Selektor</th>
+                            <th>Beispiel</th>
+                            <th>Beschreibung</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Universalselektor</td>
+                            <td><code>*</td>
+                            <td>Wählt alle Elemente aus</td>
+                        </tr>
+                        <tr>
+                            <td>Elementselektor</td>
+                            <td><code>p</td>
+                            <td>Wählt alle <code>&lt;p&gt;</code>-Tags aus</td>
+                        </tr>
+                        <tr>
+                            <td>Klassenselektor</td>
+                            <td><code>.class</code></td>
+                            <td>Wählt alle Elemente aus mit der Klasse <code>.class</code></td>
+                        </tr>
+                        <tr>
+                            <td>ID-Selektor</td>
+                            <td><code>#id</code></td>
+                            <td>Wählt alle Elemente mit der <code>id="id"</code> aus</td>
+                        </tr>
+                        <tr>
+                            <td>Gruppenselektor</td>
+                            <td><code>label, input</code></td>
+                            <td>Wählt alle <code>label</code> und alle <code>input</code> aus</td>
+                        </tr>
+                        <tr>
+                            <td>Nachfahreselektor</td>
+                            <td><code>article p</code></td>
+                            <td>Wählt alle <code>&lt;p&gt;</code>Elemente, die sich irgendwo innerhalb eines <code>&lt;article&gt;</code> befinden.</td>
+                        </tr>
+                        <tr>
+                            <td>Kindselektor</td>
+                            <td><code>section > p</code></td>
+                            <td>Wählt nur <code>&lt;p&gt;</code>, die direkt im <code>&lt;section&gt;</code> liegen</td>
+                        </tr>
+                        <tr>
+                            <td>Direkte Nachbarselektor</td>
+                            <td><code>h1 + p</code></td>
+                            <td>Wählt das ERSTE <code>&lt;p&gt;</code> direkt nach einem <code>&lt;h1&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>Allgemeine Geschwisterselektor</td>
+                            <td><code>h1 ~ p</code></td>
+                            <td>Wählt alle <code>&lt;p&gt;</code>Elemente, die nach einem <code>&lt;h1&gt;</code> auf derselben Ebene kommen.</td>
+                        </tr>
+                        <tr>
+                            <td>Attributselektor</td>
+                            <td><code>input[type="password"]</code></td>
+                            <td>Hier wird nur das <code>&lt;input&gt;</code> mit dem <code>type="password"</code> angesprochen.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        
+    </body>
+</html>

@@ -1,0 +1,192 @@
+/*Universalselektor*/
+*{
+    font-family:Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    box-sizing: border-box; /*box sizing bestimmt, wie die Größe des Elements berechnet wird. |
+                    border-box = Inhalt wird automatisch kleiner berechnet, damit 
+                    das Element die Größe nicht überschreitet auch mit Margin und Paddig*/
+    padding: 0;
+    margin: 0;              
+}
+
+/*Elementselektor*/
+body{
+    background: linear-gradient(to bottom, #f606da, #f8fcff);
+    color: #1b0677;
+}
+
+header{
+    background: linear-gradient(135deg, #97b2eb, #0534b6);
+    color: white;
+    text-align: center; /*text-align = Ausrichtung des Textes | center = zentriert*/
+    padding: 4rem 1.5rem 3rem; /*rem =n relativ zum Root Element | 
+            4rem =oben 1.5rem = rechts und links | 3rem = unten */
+    box-shadow: 0 10px 30px rgb(15, 23, 42); /*box-shadow = Schatten des "Rahmen*/
+}
+
+/*Elementselektor -> main*/
+
+main{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+}
+
+/*Elementselektor -> sections */
+section{
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 16px; /*damit kann ich die Ecken abrunden */
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.3); /* 4. Wert stellt die Stärke der Schattirung ein */
+    margin-bottom: 2rem;
+}
+
+/*Elementselektor -> h2 */
+h2{
+    font-size: 1.8rem; /*Schriftgröße festlegen*/
+    margin-bottom: 1.5rem;
+    color:#04a0e2;
+    border-left: #027cc9 solid 6px;
+    padding-left: 0.8rem;
+    text-decoration: underline; /*Überschrift unterstrichen*/
+}
+
+/*Elementselektor -> h3 */
+h3{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/*Elementselektor ->article */
+article{
+    background: linear-gradient(to bottom right, #d105f0, #95c8ef);
+    border: 1px solid #dbe3ef;
+    border-left: 6px solid #027cc9;
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/*Elementselektor -> code */
+code{
+    font-family: 'Fire code', monospace;
+    color: #b91c1c;
+    padding: 0.2rem 0.45rem;
+    font-size: 0.9rem;
+}
+
+/*Elementselektor -> pre */
+pre{
+    margin-top: 1rem;
+    background-color: #a0e6f5;
+    border-radius: 12px;
+    overflow-x: auto; /* Wenn der Text die Breite überschreitet, dann macht ein "csuszka" rein */
+    }
+
+/*Klassenselektor*/
+.wichtig{
+    color: rgb(205, 231, 6);
+}
+
+/*ID-Selektor */
+#wichtig{
+    color:#0cf52f
+}
+
+/*Gruppenselektor */
+h2,h3{
+    color:#f7a71d
+}
+
+/*Nachfahreselektor header h1 */
+header h1{
+    font-size: clamp(2rem, 5vw, 3.2rem); /*Schrift doll mitwachsen -> clamp(min, ideal, max) =>
+                    Schrift soll niemals kleinder sein als 2rem | vw=viewport width |vh=viewport height
+                    vw => Breite des sichtbaren Browserfensters
+                    5vw = 5% Breite = 50px
+                    vw-> kann höchstens 100vw sein = 1000px =100% der Breite*/
+    margin-bottom: 1rem;
+    font-weight: 700; /*Die Dicke von die Buchstaben (100-900 ->400=normal, 700=Bold in Word)*/
+}
+
+/*Nachfahrselektor header p */
+header p{
+    max-width: 800px;
+    margin: 0 auto; /* 0-> unten und oben | auto -> berechnet links und rechts Platz automatisch damit er gleich bleibt */
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/*Nachfahrselektor article p */
+article p{
+    margin-bottom: #1d8574;
+}
+
+/*Nachfahrselektor article strong */
+article strong{
+    color: #e083e5;
+}
+
+/*Nachfahrselektor pre code */
+pre code{
+    display: block;
+    padding: 1rem 0; 
+    color: rgb(254, 51, 0);
+    font-size: 1rem;
+    transform: translateX(-10px); /*verschiebt das Element an der X -Achse */
+}
+
+/*Kindselektor atricle >h3 */
+article > h3{
+    color:darkgreen;
+    text-decoration: underline wavy;
+}
+
+/*Direkte Nachbarselektor h1 + p */
+h1 + p{
+    color: seashell;
+}
+
+/*Allgemeiner Geschwisterselektor h3 ~ p */
+h3 ~ p{
+    color:rgb(65, 237, 191);
+}
+
+/*Tabelle*/
+
+table{
+    width: 100%;
+    border-collapse: collapse; /*Zieht die benachbarten Ränder zusammen 
+                                -> also aus mehreren Linien wird eine! */                            
+    border-radius: 14px;  
+    overflow: hidden; /* Alles was aus dem Element herausragt, soll 
+                        abgeschnitten, bzw. versteckt werden */
+    background-color: rgba(115, 171, 250, 0.5);               
+}
+
+thead{
+    background: linear-gradient(135deg, #1e293b, #a2c4fc);
+    color: white;
+}
+
+th{
+    text-align:left;
+    padding 1rem;
+    font-size: 1.2rem;
+}
+
+td{
+    padding: 1rem;
+    border-bottom: 1px solid #dbe3ef;
+}
+
+tbody tr:nth-child(even){  /*typisch für Tabellen styling -> Es werden alle
+    geraden Kinder der Tabelle angesprochen (jede zweite Zeile) */
+    background-color:  #dbe3ef;
+}
+
+tbody tr:hover{
+    background-color: rgb(69, 214, 239);
+    transition: 0.3s;
+}
